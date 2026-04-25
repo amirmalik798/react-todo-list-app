@@ -1,0 +1,277 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at top, #1f2937, #0b0f19);
+  color: #e5e7eb;
+
+  padding: 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* APP CONTAINER (COMPACT MODERN) */
+.app {
+  width: 100%;
+  max-width: 520px;
+  padding: 22px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* HEADINGS (ANIMATED) */
+h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 1px;
+  animation: fadeSlideIn 0.6s ease-out;
+}
+
+h4 {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 1px;
+  animation: fadeSlideIn 0.6s ease-out;
+}
+
+/* FORM */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* INPUT ROW */
+.input-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+/* INPUT */
+.todo-input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 12px 14px;
+  font-size: 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(0, 0, 0, 0.4);
+  color: #f3f4f6;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+.todo-input::placeholder {
+  color: #9ca3af;
+}
+
+.todo-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* BUTTON */
+.add-btn {
+  flex-shrink: 0;
+
+  padding: 10px 14px;
+  font-size: 14px;
+
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 15px rgba(99, 102, 241, 0.25);
+}
+
+/* ERROR */
+.error {
+  color: #fff;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  margin-top: 8px;
+
+  display: inline-block;
+  width: 100%;
+
+  animation: shake 0.2s ease-in-out, fadeSlideIn 0.3s ease-out;
+}
+
+/* TODO LIST */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TODO ITEM */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 10px;
+  width: 100%;
+
+  padding: 14px 16px;
+  font-size: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: 0.3s;
+
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* TEXT (WRAPPING FIXED) */
+.todo-text {
+  flex: 1;
+  min-width: 0;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  color: #e5e7eb;
+}
+
+.todo-item.completed {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+  opacity: 0.7;
+}
+
+.todo-item.completed {
+  transform: scale(0.98);
+}
+
+.todo-item,
+.todo-text {
+  transition: 0.3s ease;
+}
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* BUTTONS */
+.btn {
+  border: none;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+/* COMPLETE */
+.complete-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.complete-btn:hover {
+  background: #16a34a;
+}
+
+/* DELETE */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .app {
+    max-width: 100%;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+}
