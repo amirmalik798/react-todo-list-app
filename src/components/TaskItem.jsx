@@ -5,6 +5,7 @@ function TaskItem({task, deleteTask, toggleTask}) {
     return (
         <li className={`todo-item ${task.completed ? "completed" : ""}`}>
             <span className="todo-text">{task.taskTitle}</span>
+            <span className='todo-text'>{task.taskDate}</span>
             <div className="actions">
                 <button className="btn complete-btn" onClick={() => {
                     toggleTask(task)
