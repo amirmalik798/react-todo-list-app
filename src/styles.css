@@ -368,4 +368,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .control-btn {
     width: 30%;
   }
+
+  .control-btn {
+    width: 30%;
+    text-align: center;
+  }
+
+  /* STRONGER ACTIVE STATE FOR MOBILE */
+  .control-btn.active {
+    background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+    color: #001018;
+    font-weight: 600;
+    border: 1px solid rgba(34, 211, 238, 0.6);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+    transform: scale(1.03);
+  }
 }
